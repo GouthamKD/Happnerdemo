@@ -1,0 +1,16 @@
+var Happner = require('happner');
+var Config  = require('../config');
+
+// Call create() factory which returns the promise of a mesh or error
+
+Happner.create(Config)
+
+.then(function(mesh) {
+console.log('Running from bin');
+  // got running mesh
+})
+
+.catch(function(error) {
+  console.error(error.stack || error.toString())
+  process.exit(1);
+});
